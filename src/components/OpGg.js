@@ -6,6 +6,7 @@ function OpGg() {
   const [nicks, setNicks] = useState([]);
   const [nickHref, setNickHref] = useState('');
   const [gamerTagHref, setGamerTagHref] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
 
   const onSubmit = () => {
     if (matchId > 0) {
@@ -16,6 +17,7 @@ function OpGg() {
           if (response.ok) {
             return response.json();
           }
+          setAlertMessage("Match ID couldn't be resolved and resulted in an error.. Try another ID! (Error in console)");
           throw new Error(`Received a status '${response.status}' and did therefore not continue..`);
         })
         .then(matchData => {
@@ -39,6 +41,7 @@ function OpGg() {
                     setNicks(opponentPlayers);
                     setNickHref(`https://euw.op.gg/multi/query=${opponentPlayers.map(player => player.nickName).join()}`);
                     setGamerTagHref(`https://euw.op.gg/multi/query=${filteredGamerTags.map(player => player.gamerId).join()}`);
+                    setAlertMessage('');
                   })
               );
           }
@@ -51,18 +54,24 @@ function OpGg() {
 
   return (
     <div className="container-fluid">
+      {alertMessage && alertMessage !== '' &&
+        <div class="alert alert-primary">
+          {alertMessage}
+        </div>
+      }
       <h3>NC ColLeagues</h3>
       <div className="form-horizontal">
         <div className="form-group">
           <label>Enter match ID here:</label>
           <input className="form-control" type="number" value={matchId}
-            placeholder="Type in matchId here..."
+            placeholder="Type in match ID here..."
             onChange={event => setMatchId(event.target.value)}></input>
           <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small> 
         </div>
         <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
       </div>
-      {nickHref && nicks &&
+      
+      {nickHref && nicks && alertMessage === '' &&
         <React.Fragment>
           <div className="row">
             <div className="col col-lg-6">
@@ -75,7 +84,7 @@ function OpGg() {
             ))}
           </ul>
         </React.Fragment>}
-      {gamerTagHref && gamerTags &&
+      {gamerTagHref && gamerTags && alertMessage === '' &&
         <React.Fragment>
           <div className="row">
             <div className="col col-lg-6">

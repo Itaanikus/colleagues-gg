@@ -57,3 +57,9 @@ p {
 .text-muted {
   color: #040038!important;
 }
+
+.alert-primary {
+  color: white;
+  background-color: #E35F52;
+  border-color: #E35F52;
+}
