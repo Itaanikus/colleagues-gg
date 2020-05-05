@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import OpGg from './components/OpGg';
-import Nav from './components/Nav';
+import Home from './Home/Home';
+import Nav from './Nav/Nav';
 
 function App() {
   return (
     <React.Fragment>
       <Nav />
       <div className="app">
-        <OpGg />
+        <Home />
       </div>
     </React.Fragment>
   );

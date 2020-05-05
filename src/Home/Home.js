@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import TeamInfo from '../shared/TeamInfo';
 
-function OpGg() {
+function Home() {
   const [matchId, setMatchId] = useState(0);
   const [gamerTags, setGamerTags] = useState([]);
   const [nicks, setNicks] = useState([]);
-  const [nickHref, setNickHref] = useState('');
-  const [gamerTagHref, setGamerTagHref] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
 
   const onSubmit = async () => {
@@ -15,8 +14,8 @@ function OpGg() {
       const response = await fetch(`https://app.esportligaen.dk/api/match/details/${matchId}`)
 
       if (!response.ok) {
-        setAlertMessage("Could not resolve a match from the given ID, which resulted in an error.. Try another ID! (Error in console)");
-        throw new Error(`Received a status '${response.status}' and did therefore not continue..`);
+        setAlertMessage("Could not resolve a match from the given ID, which resulted in an error. Try another ID..");
+        return;
       }
 
       const matchData = await response.json();
@@ -31,11 +30,9 @@ function OpGg() {
         const filteredGamerTags = resolvedResponses
           .flatMap(response => response.gameLogins)
           .filter(gameLogins => gameLogins.gameLoginTypeId === leagueGameLoginType);
-          
-        setGamerTags(filteredGamerTags);
-        setNicks(opponentPlayers);
-        setNickHref(`https://euw.op.gg/multi/query=${opponentPlayers.map(player => player.nickName).join()}`);
-        setGamerTagHref(`https://euw.op.gg/multi/query=${filteredGamerTags.map(player => player.gamerId).join()}`);
+
+        setGamerTags(filteredGamerTags.map(player => ({ id: player.id, ign: player.gamerId })));
+        setNicks(opponentPlayers.map(player => ({ id: player.id, ign: player.nickName })));
         setAlertMessage('');
       }
     }
@@ -44,7 +41,7 @@ function OpGg() {
   return (
     <div className="container-fluid">
       {alertMessage && alertMessage !== '' &&
-        <div class="alert alert-primary">
+        <div className="alert alert-primary">
           {alertMessage}
         </div>
       }
@@ -55,39 +52,16 @@ function OpGg() {
           <input className="form-control" type="number" value={matchId}
             placeholder="Type in match ID here..."
             onChange={event => setMatchId(event.target.value)}></input>
-          <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small> 
+          <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
         </div>
         <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
       </div>
-      
-      {nickHref && nicks && alertMessage === '' &&
-        <React.Fragment>
-          <div className="row">
-            <div className="col col-lg-6">
-              <a href={nickHref} target="_blank">Nicknames (displayed on match tab):</a>
-            </div>
-          </div>
-          <ul>
-            {nicks.map(nick => (
-              <li key={nick.id}>{nick.nickName}</li>
-            ))}
-          </ul>
-        </React.Fragment>}
-      {gamerTagHref && gamerTags && alertMessage === '' &&
-        <React.Fragment>
-          <div className="row">
-            <div className="col col-lg-6">
-              <a href={gamerTagHref} target="_blank">GamerTags (found on player profiles):</a>
-            </div>
-          </div>
-          <ul>
-            {gamerTags.map(player => (
-              <li key={player.id}>{player.gamerId}</li>
-            ))}
-          </ul>
-        </React.Fragment>}
+      {nicks.length > 0 && alertMessage === '' &&
+        <TeamInfo players={nicks} hrefText="Nicknames:" />}
+      {gamerTags.length > 0 && alertMessage === '' &&
+        <TeamInfo players={gamerTags} hrefText="GamerTags (from player-profiles):" />}
     </div>
   );
 }
 
-export default OpGg;
+export default Home;
