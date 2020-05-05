@@ -35,7 +35,7 @@ a:hover {
   color: #dd9b2b;
 }
 
-h3, p {
+h3, p, label {
   color: #09193b;
 }
 
@@ -52,4 +52,8 @@ p {
 .app-btn:hover {
   background-color: #dd9b2b;
   border-color: #dd9b2b;
+}
+
+.text-muted {
+  color: #040038!important;
 }

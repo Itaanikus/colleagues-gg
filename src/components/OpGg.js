@@ -58,6 +58,7 @@ function OpGg() {
           <input className="form-control" type="number" value={matchId}
             placeholder="Type in matchId here..."
             onChange={event => setMatchId(event.target.value)}></input>
+          <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small> 
         </div>
         <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
       </div>
