@@ -17,7 +17,7 @@ function OpGg() {
           if (response.ok) {
             return response.json();
           }
-          setAlertMessage("Match ID couldn't be resolved and resulted in an error.. Try another ID! (Error in console)");
+          setAlertMessage("Could not resolve a match from the given ID, which resulted in an error.. Try another ID! (Error in console)");
           throw new Error(`Received a status '${response.status}' and did therefore not continue..`);
         })
         .then(matchData => {
