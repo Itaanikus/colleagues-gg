@@ -1,1 +1,3 @@
-Neat tool to OP.GG opponents on esportligaen!
+NC ColLeagues - op.gg tool
+
+Web app created in React.
