@@ -5,12 +5,16 @@ function TeamInfo({ players, hrefText }) {
 
   return (
     <div className="col col-lg-6">
-      <a href={href} target="_blank"><strong>{hrefText}</strong></a>
-      <ul>
-        {players.map(player => (
-          <li key={player.id}><a href={`https://euw.op.gg/summoner/userName=${player.ign}`}>{player.ign}</a></li>
-        ))}
-      </ul>
+      <div className="card">
+        <div className="card-body">
+          <a href={href} target="_blank"><strong>{hrefText}</strong></a>
+          <ul>
+            {players.map(player => (
+              <li key={player.id}><a href={`https://euw.op.gg/summoner/userName=${player.ign}`}>{player.ign}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

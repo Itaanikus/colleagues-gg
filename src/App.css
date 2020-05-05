@@ -22,7 +22,7 @@ input[type=number] {
 
 .form-control:focus {
   border-color: #dd9b2b !important;
-  box-shadow: 0 0 5px rgba(221, 155, 43, 1) !important;
+  box-shadow: 0 0 5px #dd9b2b!important;
 }
 
 a, a:link {
@@ -35,8 +35,12 @@ a:hover {
   color: #dd9b2b;
 }
 
-h3, p, label, li {
-  color: #09193b!important;
+h3, h5, p, label, li {
+  color: #09193b;
+}
+
+h3 {
+  margin-top: 5px;
 }
 
 p {
@@ -47,11 +51,24 @@ p {
 .app-btn {
   background-color: #09193b;
   border-color: #09193b;
+  margin-bottom: 10px;
 }
 
 .app-btn:hover {
   background-color: #dd9b2b;
   border-color: #dd9b2b;
+}
+
+.app-btn:focus {
+  background-color: #dd9b2b;
+  border-color: #dd9b2b;
+  box-shadow: 0 0 0 0.2rem rgba(221, 155, 43, 0.5)
+}
+
+.app-btn:active {
+  background-color: #dd9b2b!important;
+  border-color: #dd9b2b!important;
+  box-shadow: 0 0 0 0.2rem rgba(221, 155, 43, 0.5)!important;
 }
 
 .text-muted {
@@ -62,4 +79,8 @@ p {
   color: white;
   background-color: #E35F52;
   border-color: #E35F52;
+}
+
+.card {
+  border: 1px solid #09193b;
 }

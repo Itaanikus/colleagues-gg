@@ -5,7 +5,7 @@ function Nav() {
   return (
     <React.Fragment>
       <nav className="navbar app-navbar">
-        <p>NC ColLeagues</p>
+        <p><i className="fas fa-brain"></i> NC ColLeagues</p>
       </nav>
     </React.Fragment>
   );
