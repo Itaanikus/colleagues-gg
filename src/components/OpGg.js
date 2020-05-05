@@ -8,47 +8,36 @@ function OpGg() {
   const [gamerTagHref, setGamerTagHref] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (matchId > 0) {
       const ncOrganisationId = 661;
       const leagueGameLoginType = 2;
-      fetch(`https://app.esportligaen.dk/api/match/details/${matchId}`)
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          setAlertMessage("Could not resolve a match from the given ID, which resulted in an error.. Try another ID! (Error in console)");
-          throw new Error(`Received a status '${response.status}' and did therefore not continue..`);
-        })
-        .then(matchData => {
-          const opponentTeam = matchData.MatchTeams.filter(matchTeam => matchTeam.Team.Organisation.id !== ncOrganisationId);
+      const response = await fetch(`https://app.esportligaen.dk/api/match/details/${matchId}`)
 
-          if (opponentTeam.length === 1) {
-            const opponentPlayers = opponentTeam[0].Team.TeamMembers;
+      if (!response.ok) {
+        setAlertMessage("Could not resolve a match from the given ID, which resulted in an error.. Try another ID! (Error in console)");
+        throw new Error(`Received a status '${response.status}' and did therefore not continue..`);
+      }
 
-            let promiseArray = [];
-            opponentPlayers.forEach(player =>
-              promiseArray.push(fetch(`https://app.esportligaen.dk/api/user/${player.id}?includeGameTeamInfo=true`))
-            );
-            Promise.all(promiseArray)
-              .then(responseArray =>
-                Promise.all(responseArray.map(response => response.json()))
-                  .then(resolvedResponses => {
-                    const leagueGamerTags = resolvedResponses
-                      .map(response => response.gameLogins);
-                    const filteredGamerTags = [].concat(...leagueGamerTags).filter(gameLogins => gameLogins.gameLoginTypeId === leagueGameLoginType);
-                    setGamerTags(filteredGamerTags);
-                    setNicks(opponentPlayers);
-                    setNickHref(`https://euw.op.gg/multi/query=${opponentPlayers.map(player => player.nickName).join()}`);
-                    setGamerTagHref(`https://euw.op.gg/multi/query=${filteredGamerTags.map(player => player.gamerId).join()}`);
-                    setAlertMessage('');
-                  })
-              );
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      const matchData = await response.json();
+      const opponentTeam = matchData.MatchTeams.filter(matchTeam => matchTeam.Team.Organisation.id !== ncOrganisationId);
+
+      if (opponentTeam.length === 1) {
+        const opponentPlayers = opponentTeam[0].Team.TeamMembers;
+        let promiseArray = opponentPlayers.map(player => fetch(`https://app.esportligaen.dk/api/user/${player.id}?includeGameTeamInfo=true`)
+          .then(res => res.json()));
+
+        const resolvedResponses = await Promise.all(promiseArray)
+        const filteredGamerTags = resolvedResponses
+          .flatMap(response => response.gameLogins)
+          .filter(gameLogins => gameLogins.gameLoginTypeId === leagueGameLoginType);
+          
+        setGamerTags(filteredGamerTags);
+        setNicks(opponentPlayers);
+        setNickHref(`https://euw.op.gg/multi/query=${opponentPlayers.map(player => player.nickName).join()}`);
+        setGamerTagHref(`https://euw.op.gg/multi/query=${filteredGamerTags.map(player => player.gamerId).join()}`);
+        setAlertMessage('');
+      }
     }
   }
 
