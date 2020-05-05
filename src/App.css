@@ -35,8 +35,8 @@ a:hover {
   color: #dd9b2b;
 }
 
-h3, p, label {
-  color: #09193b;
+h3, p, label, li {
+  color: #09193b!important;
 }
 
 p {

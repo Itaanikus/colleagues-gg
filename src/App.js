@@ -7,9 +7,7 @@ function App() {
   return (
     <React.Fragment>
       <Nav />
-      <div className="app">
-        <Home />
-      </div>
+      <Home />
     </React.Fragment>
   );
 }

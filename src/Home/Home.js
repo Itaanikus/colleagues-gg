@@ -31,36 +31,53 @@ function Home() {
           .flatMap(response => response.gameLogins)
           .filter(gameLogins => gameLogins.gameLoginTypeId === leagueGameLoginType);
 
+        setAlertMessage('');
         setGamerTags(filteredGamerTags.map(player => ({ id: player.id, ign: player.gamerId })));
         setNicks(opponentPlayers.map(player => ({ id: player.id, ign: player.nickName })));
-        setAlertMessage('');
       }
     }
   }
 
   return (
     <div className="container-fluid">
-      {alertMessage && alertMessage !== '' &&
-        <div className="alert alert-primary">
-          {alertMessage}
+      <div className="row">
+        <div className="d-none d-lg-block col-lg-3">
         </div>
-      }
-      <h3>NC ColLeagues</h3>
-      <div className="form-horizontal">
-        <div className="form-group">
-          <label>Enter match ID here:</label>
-          <input className="form-control" type="number" value={matchId}
-            placeholder="Type in match ID here..."
-            onChange={event => setMatchId(event.target.value)}></input>
-          <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
+        <div className="col col-lg-6">
+          <div className="row">
+            <div className="col">
+              {alertMessage && alertMessage !== '' &&
+                <div className="alert alert-primary">
+                  {alertMessage}
+                </div>}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <h3>NC ColLeagues</h3>
+              <div className="form-horizontal">
+                <div className="form-group">
+                  <label>Enter match ID here:</label>
+                  <input className="form-control" type="number" value={matchId}
+                    placeholder="Type in match ID here..."
+                    onChange={event => setMatchId(event.target.value)}></input>
+                  <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
+                </div>
+                <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            {nicks.length > 0 && alertMessage === '' &&
+              <TeamInfo players={nicks} hrefText="Nicknames (multi OP.GG):" />}
+            {gamerTags.length > 0 && alertMessage === '' &&
+              <TeamInfo players={gamerTags} hrefText="GamerTags (multi OP.GG):" />}
+          </div>
         </div>
-        <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
+        <div className="d-none d-lg-block col-lg-3">
+        </div>
       </div>
-      {nicks.length > 0 && alertMessage === '' &&
-        <TeamInfo players={nicks} hrefText="Nicknames:" />}
-      {gamerTags.length > 0 && alertMessage === '' &&
-        <TeamInfo players={gamerTags} hrefText="GamerTags (from player-profiles):" />}
-    </div>
+    </div >
   );
 }
 
