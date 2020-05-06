@@ -63,15 +63,15 @@ function Home() {
                     onChange={event => setMatchId(event.target.value)}></input>
                   <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
                 </div>
-                <button className="btn btn-primary app-btn" onClick={onSubmit}>Search</button>
+                <button className="btn btn-outline-primary app-primary-btn" onClick={onSubmit}>Search</button>
               </div>
             </div>
           </div>
           <div className="row">
             {nicks.length > 0 && alertMessage === '' &&
-              <TeamInfo players={nicks} hrefText="Nicknames (multi OP.GG):" />}
+              <TeamInfo players={nicks} title="Nicknames:" />}
             {gamerTags.length > 0 && alertMessage === '' &&
-              <TeamInfo players={gamerTags} hrefText="GamerTags (multi OP.GG):" />}
+              <TeamInfo players={gamerTags} title="GamerTags:" />}
           </div>
         </div>
         <div className="d-none d-lg-block col-lg-3">
