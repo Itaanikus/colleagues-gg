@@ -117,8 +117,15 @@ p {
 
 .card {
   border: 1px solid #09193b;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-/* .card-header {
-  background-color: rgba(9, 25, 59, 0.25);
-} */
+.card-header {
+  background-color: #09193b;
+  color: white;
+}
+
+.card-body {
+  background-color: rgba(9, 25, 59, 0.05);
+}
