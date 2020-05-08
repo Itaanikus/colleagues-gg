@@ -21,17 +21,16 @@ input[type=number] {
 }
 
 .form-control:focus {
-  border-color: #09193b !important;
-  box-shadow: 0 0 5px #09193b!important;
+  border-color: #09193b;
+  box-shadow: 0 0 5px #09193b;
 }
 
-a, a:link {
-  margin-top: auto;
+a, a:link.app-link {
   color: #09193b;
   text-decoration: none;
 }
 
-a:hover {
+a:hover.app-link {
   color: #E35F52;
 }
 
@@ -69,47 +68,57 @@ p {
 
 .app-primary-btn:active {
   color: white;
-  background-color: #09193b!important;
-  border-color: #09193b!important;
-  box-shadow: 0 0 0 0.2rem rgba(9, 25, 59, 0.5)!important;
+  background-color: #09193b;
+  border-color: #09193b;
+  box-shadow: 0 0 0 0.2rem rgba(9, 25, 59, 0.5);
 }
 
 .app-secondary-btn {
-  color: #E35F52!important;
+  color: #E35F52;
   border-color: #E35F52;
   margin-bottom: 10px;
 }
 
 .app-secondary-btn:hover {
-  color: white!important;
+  color: white;
   background-color:#E35F52;
   border-color: #E35F52;
 }
 
 .app-secondary-btn:focus {
-  color: white!important;
+  color: white;
   background-color: #E35F52;
   border-color: #E35F52;
   box-shadow: 0 0 0 0.2rem rgba(227, 95, 82, 0.5)
 }
 
 .app-secondary-btn:active {
-  color: white!important;
-  background-color: #E35F52!important;
-  border-color: #E35F52!important;
-  box-shadow: 0 0 0 0.2rem rgba(227, 95, 82, 0.5)!important;
+  color: white;
+  background-color: #E35F52;
+  border-color: #E35F52;
+  box-shadow: 0 0 0 0.2rem rgba(227, 95, 82, 0.5);
 }
 
 .text-muted {
-  color: #040038!important;
+  color: #040038;
 }
 
 .alert-primary {
   color: white;
   background-color: #E35F52;
   border-color: #E35F52;
+  position: relative;
+  padding: 11px 18px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .card {
   border: 1px solid #09193b;
 }
+
+/* .card-header {
+  background-color: rgba(9, 25, 59, 0.25);
+} */

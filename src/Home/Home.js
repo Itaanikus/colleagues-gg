@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TeamInfo from '../shared/TeamInfo';
 
 function Home() {
-  const [matchId, setMatchId] = useState(0);
+  const [matchId, setMatchId] = useState('');
   const [gamerTags, setGamerTags] = useState([]);
   const [nicks, setNicks] = useState([]);
   const [alertMessage, setAlertMessage] = useState('');
@@ -47,7 +47,7 @@ function Home() {
           <div className="row">
             <div className="col">
               {alertMessage && alertMessage !== '' &&
-                <div className="alert alert-primary">
+                <div className="alert-primary">
                   {alertMessage}
                 </div>}
             </div>
@@ -59,19 +59,19 @@ function Home() {
                 <div className="form-group">
                   <label>Enter match ID here:</label>
                   <input className="form-control" type="number" value={matchId}
-                    placeholder="Type in match ID here..."
+                    placeholder="Enter ID here..."
                     onChange={event => setMatchId(event.target.value)}></input>
                   <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
                 </div>
-                <button className="btn btn-outline-primary app-primary-btn" onClick={onSubmit}>Search</button>
+                <button className="btn app-primary-btn" onClick={onSubmit}>Search</button>
               </div>
             </div>
           </div>
           <div className="row">
             {nicks.length > 0 && alertMessage === '' &&
-              <TeamInfo players={nicks} title="Nicknames:" />}
+              <TeamInfo players={nicks} title="Nicknames" />}
             {gamerTags.length > 0 && alertMessage === '' &&
-              <TeamInfo players={gamerTags} title="GamerTags:" />}
+              <TeamInfo players={gamerTags} title="GamerTags" />}
           </div>
         </div>
         <div className="d-none d-lg-block col-lg-3">
