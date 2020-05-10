@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "../../node_modules/react";
 import TeamInfo from '../shared/TeamInfo';
+import Cardbox from "../shared/Cardbox/Cardbox";
 
 function Home() {
   const [matchId, setMatchId] = useState('');
@@ -44,27 +45,28 @@ function Home() {
         <div className="d-none d-lg-block col-lg-3">
         </div>
         <div className="col col-lg-6">
-          <div className="row">
-            <div className="col">
-              {alertMessage && alertMessage !== '' &&
+          {alertMessage && alertMessage !== '' &&
+            <div className="row">
+              <div className="col">
                 <div className="alert-primary">
                   {alertMessage}
-                </div>}
-            </div>
-          </div>
+                </div>
+              </div>
+            </div>}
           <div className="row">
             <div className="col">
-              <h3>NC ColLeagues</h3>
-              <div className="form-horizontal">
-                <div className="form-group">
-                  <label>Enter match ID here:</label>
-                  <input className="form-control" type="number" value={matchId}
-                    placeholder="Enter ID here..."
-                    onChange={event => setMatchId(event.target.value)}></input>
-                  <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
+              <Cardbox title="Match info">
+                <div className="form-horizontal">
+                  <div className="form-group">
+                    <label>Enter match ID here:</label>
+                    <input className="form-control" type="number" value={matchId}
+                      placeholder="Enter ID here..."
+                      onChange={event => setMatchId(event.target.value)}></input>
+                    <small className="form-text text-muted">Example: Enter "24480" for https://app.esportligaen.dk/match/24480</small>
+                  </div>
+                  <button className="btn app-primary-btn" onClick={onSubmit}>Search</button>
                 </div>
-                <button className="btn app-primary-btn" onClick={onSubmit}>Search</button>
-              </div>
+              </Cardbox>
             </div>
           </div>
           <div className="row">

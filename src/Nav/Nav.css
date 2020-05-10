@@ -1,7 +1,11 @@
 .app-navbar {
-  background-color: #09193b;
+  background-color: var(--dark-grey);
 }
 
 .p-navbar {
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
   color: white!important;
 }

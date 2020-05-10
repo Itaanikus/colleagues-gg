@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './Home/Home';
+import Home from './pages/Home';
 import Nav from './Nav/Nav';
 
 import './App.css';
@@ -9,7 +9,9 @@ function App() {
   return (
     <React.Fragment>
       <Nav />
-      <Home />
+      <div className="app">
+        <Home />
+      </div>
     </React.Fragment>
   );
 }

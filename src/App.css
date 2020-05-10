@@ -1,15 +1,14 @@
-.app {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 700px;
+@import './_constants.css';
+
+body {
+  background-color: var(--light-grey);
 }
 
+/* Input & forms */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
 
 input[type=number] {
@@ -17,25 +16,17 @@ input[type=number] {
 }
 
 .form-control {
-  border: 1px solid #09193b;
+  border: 1px solid var(--primary-color);
 }
 
 .form-control:focus {
-  border-color: #09193b;
-  box-shadow: 0 0 5px #09193b;
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 5px var(--dark-grey);
 }
 
-a, a:link.app-link {
-  color: #09193b;
-  text-decoration: none;
-}
-
-a:hover.app-link {
-  color: #E35F52;
-}
-
+/* Text selectors */
 h3, h5, p, label, li {
-  color: #09193b;
+  color: var(--dark-grey);
 }
 
 h3 {
@@ -47,85 +38,80 @@ p {
   margin-bottom: 0;
 }
 
+/* Links */
+a, a:link.app-link {
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
+a:hover.app-link {
+  color: var(--pink);
+}
+
+/* Buttons */
 .app-primary-btn {
-  color: #09193b;
-  border-color: #09193b;
+  color: var(--dark-grey);
+  border-color: var(--dark-grey);
   margin-bottom: 10px;
 }
 
 .app-primary-btn:hover {
   color: white;
-  background-color: #09193b;
-  border-color: #09193b;
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
 }
 
 .app-primary-btn:focus {
   color: white;
-  background-color: #09193b;
-  border-color: #09193b;
-  box-shadow: 0 0 0 0.2rem rgba(9, 25, 59, 0.5)
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 0 0.2rem rgba(142,142,138, 0.5)
 }
 
 .app-primary-btn:active {
   color: white;
-  background-color: #09193b;
-  border-color: #09193b;
-  box-shadow: 0 0 0 0.2rem rgba(9, 25, 59, 0.5);
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 0 0.2rem rgba(142,142,138, 0.5);
 }
 
 .app-secondary-btn {
-  color: #E35F52;
-  border-color: #E35F52;
+  color: var(--pink);
+  border-color: var(--pink);
   margin-bottom: 10px;
 }
 
 .app-secondary-btn:hover {
   color: white;
-  background-color:#E35F52;
-  border-color: #E35F52;
+  background-color:var(--pink);
+  border-color: var(--pink);
 }
 
 .app-secondary-btn:focus {
   color: white;
-  background-color: #E35F52;
-  border-color: #E35F52;
-  box-shadow: 0 0 0 0.2rem rgba(227, 95, 82, 0.5)
+  background-color: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 0 0.2rem rgba(233, 128, 116, 0.5)
 }
 
 .app-secondary-btn:active {
   color: white;
-  background-color: #E35F52;
-  border-color: #E35F52;
-  box-shadow: 0 0 0 0.2rem rgba(227, 95, 82, 0.5);
+  background-color: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 0 0.2rem rgba(233, 128, 116, 0.5);
 }
 
 .text-muted {
-  color: #040038;
+  color: var(--dark-grey)!important;
 }
 
 .alert-primary {
   color: white;
-  background-color: #E35F52;
-  border-color: #E35F52;
+  background-color: var(--red);
+  border-color: var(--red);
   position: relative;
   padding: 11px 18px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 20px;
   border: 1px solid transparent;
   border-radius: 10px;
-}
-
-.card {
-  border: 1px solid #09193b;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.card-header {
-  background-color: #09193b;
-  color: white;
-}
-
-.card-body {
-  background-color: rgba(9, 25, 59, 0.05);
 }
