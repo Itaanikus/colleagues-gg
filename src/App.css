@@ -11,6 +11,18 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+input[type=number]::placeholder { /* Firefox, Chrome, Opera */ 
+  color: var(--dark-grey); 
+} 
+
+input[type=number]:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+  color: var(--dark-grey);
+} 
+
+input[type=number]::-ms-input-placeholder { /* Microsoft Edge */ 
+  color: var(--dark-grey);
+} 
+
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
