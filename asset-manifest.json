@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/colleagues-gg/static/css/main.21829e4a.chunk.css",
-    "main.js": "/colleagues-gg/static/js/main.4f13c963.chunk.js",
-    "main.js.map": "/colleagues-gg/static/js/main.4f13c963.chunk.js.map",
+    "main.js": "/colleagues-gg/static/js/main.de3a3910.chunk.js",
+    "main.js.map": "/colleagues-gg/static/js/main.de3a3910.chunk.js.map",
     "runtime-main.js": "/colleagues-gg/static/js/runtime-main.ee8dc423.js",
     "runtime-main.js.map": "/colleagues-gg/static/js/runtime-main.ee8dc423.js.map",
     "static/css/2.cadf0bcd.chunk.css": "/colleagues-gg/static/css/2.cadf0bcd.chunk.css",
     "static/js/2.b222add7.chunk.js": "/colleagues-gg/static/js/2.b222add7.chunk.js",
     "static/js/2.b222add7.chunk.js.map": "/colleagues-gg/static/js/2.b222add7.chunk.js.map",
     "index.html": "/colleagues-gg/index.html",
-    "precache-manifest.f8ca9c11a36355e4d2532dded6df0426.js": "/colleagues-gg/precache-manifest.f8ca9c11a36355e4d2532dded6df0426.js",
+    "precache-manifest.ee6852d0e81cd3aacecb6a00d771e762.js": "/colleagues-gg/precache-manifest.ee6852d0e81cd3aacecb6a00d771e762.js",
     "service-worker.js": "/colleagues-gg/service-worker.js",
     "static/css/2.cadf0bcd.chunk.css.map": "/colleagues-gg/static/css/2.cadf0bcd.chunk.css.map",
     "static/css/main.21829e4a.chunk.css.map": "/colleagues-gg/static/css/main.21829e4a.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.cadf0bcd.chunk.css",
     "static/js/2.b222add7.chunk.js",
     "static/css/main.21829e4a.chunk.css",
-    "static/js/main.4f13c963.chunk.js"
+    "static/js/main.de3a3910.chunk.js"
   ]
 }
