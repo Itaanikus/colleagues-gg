@@ -126,5 +126,11 @@ a:hover.app-link {
 
 footer {
   background-color: var(--nc-header);
+  color: var(--light-background);
   min-height: 100px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  border-top: 3px solid var(--nc-red);
 }
