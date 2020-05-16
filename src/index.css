@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f4f5;
+  background-color: var(--light-background);
   justify-content: center;
   margin: 0;
   font-family:  'Roboto Slap', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

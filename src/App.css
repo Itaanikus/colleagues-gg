@@ -25,11 +25,13 @@ input[type=number] {
 
 .form-control {
   border: 1px solid var(--nc-blue);
+  background-color: var(--light-background);
 }
 
 .form-control:focus {
   border-color: var(--nc-blue);
   box-shadow: 0 0 5px var(--nc-blue);
+  background-color: var(--light-background);
 }
 
 /* Text selectors */
