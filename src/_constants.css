@@ -1,10 +1,14 @@
 :root {
     --nc-blue: #09193B;
-    --egg-white: #EAE7DC;
+    --nc-blue-lighter: rgb(11, 22, 59);
+    --gradient-blue-purp-blue: linear-gradient(to right,rgb(23, 23, 99),rgb(236, 17, 236), rgb(23, 23, 99));
+    --egg-white: rgb(250, 249, 245);
     --vanilla-white: #D8C3A5;
     --sand: #DEBA87;
     --light-grey: #D1D1D1;
     --dark-grey: #8E8D8A;
     --pink: #E98074;
+    --bright-pink: rgb(236, 17, 236);
     --red: #E86A4F;
+    --blood: rgb(128, 4, 31);
   }

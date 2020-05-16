@@ -1,18 +1,17 @@
 .card {
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--black);
     border-radius: 20px;
     overflow: hidden;
     margin-top: 20px;
-    box-shadow: 0 0 3px 1px var(--dark-grey);
   }
   
   .card-header {
-    background-color: var(--vanilla-white);
+    background-color: var(--nc-blue);
     color: white;
   }
 
   label, .card-body{
-      color: var(--dark-grey)!important;
+      color: var(--black)!important;
   }
   
   .card-body {
