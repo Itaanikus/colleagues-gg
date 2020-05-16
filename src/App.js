@@ -9,9 +9,17 @@ function App() {
   return (
     <React.Fragment>
       <Nav />
-      <div className="app">
-        <Home />
-      </div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="d-none d-lg-block col-lg-3"></div>
+          <div className="col col-lg-6">
+            <div className="app">
+              <Home />
+            </div>
+          </div>
+          <div className="d-none d-lg-block col-lg-3"></div>
+        </div>
+      </div >
     </React.Fragment>
   );
 }

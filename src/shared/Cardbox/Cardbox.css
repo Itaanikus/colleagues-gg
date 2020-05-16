@@ -1,20 +1,20 @@
 .card {
-    border: 1px solid var(--light-grey);
+    border: 0;
     border-radius: 20px;
     overflow: hidden;
     margin-top: 20px;
-    box-shadow: 0 0 3px 1px var(--dark-grey);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   }
   
   .card-header {
-    background-color: var(--vanilla-white);
+    background-color: var(--nc-header);
     color: white;
   }
 
   label, .card-body{
-      color: var(--dark-grey)!important;
+      color: var(--nc-blue)!important;
   }
   
   .card-body {
-    background-color: var(--egg-white);
+    background-color: #f0f4f5;
   }

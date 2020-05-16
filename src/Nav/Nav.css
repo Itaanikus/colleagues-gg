@@ -1,5 +1,6 @@
 .app-navbar {
-  background-color: var(--dark-grey);
+  background-color: var(--nc-header);
+  border-bottom: 3px solid var(--nc-red);
 }
 
 .p-navbar {

@@ -1,10 +1,20 @@
 :root {
-    --nc-blue: #09193B;
-    --egg-white: #EAE7DC;
-    --vanilla-white: #D8C3A5;
-    --sand: #DEBA87;
-    --light-grey: #D1D1D1;
-    --dark-grey: #8E8D8A;
-    --pink: #E98074;
-    --red: #E86A4F;
-  }
+  /* NC COLORS */
+  --nc-header: #0F2147;
+
+  --nc-blue: #09193B;
+  --nc-orange: #DD9B2B;
+  --nc-red: #E35F52;
+  --nc-cyan: #50B8C1;
+
+  /* ALTERNATIVE THEME COLORS */
+  --egg-white: #EAE7DC;
+  --vanilla-white: #D8C3A5;
+  --sand: #DEBA87;
+
+  --light-grey: #D1D1D1;
+  --dark-grey: #8E8D8A;
+  
+  --pink: #E98074;
+  --red: #E86A4F;
+}
