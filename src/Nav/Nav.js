@@ -5,7 +5,8 @@ function Nav() {
   return (
     <header>
       <nav className="navbar app-navbar">
-        <p className="p-navbar"><i className="fas fa-brain"></i> ColLeagues GG</p>
+        <p className="p-navbar"><i className="fas fa-brain">
+          </i> ColLeagues GG</p>
       </nav>
     </header>
   );

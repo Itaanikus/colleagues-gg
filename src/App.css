@@ -1,7 +1,8 @@
 @import './_constants.css';
 
 body {
-  background-color: var(--light-grey);
+  background-color: var(--nc-blue);
+  background-image: var(--gradient-blue-purp-blue);
 }
 
 /* Input & forms */
@@ -28,17 +29,17 @@ input[type=number] {
 }
 
 .form-control {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--nc-blue);
 }
 
 .form-control:focus {
-  border-color: var(--dark-grey);
-  box-shadow: 0 0 5px var(--dark-grey);
+  border-color: 1px solid var(--nc-blue);
+  box-shadow: 0 0 5px var(--bright-pink);
 }
 
 /* Text selectors */
 h3, h5, p, label, li {
-  color: var(--dark-grey);
+  color: var(--nc-blue);
 }
 
 h3 {
@@ -52,51 +53,58 @@ p {
 
 /* Links */
 a, a:link.app-link {
-  color: var(--dark-grey);
+  color: var(--nc-blue);
   text-decoration: none;
 }
 
+li {
+  padding-bottom: 10px;
+}
+
 a:hover.app-link {
-  color: var(--pink);
+  color: var(--bright-pink);
+  font-weight: bolder;
 }
 
 /* Buttons */
 .app-primary-btn {
-  color: var(--dark-grey);
-  border-color: var(--dark-grey);
+  color: var(--nc-blue);
+  border-color: var(--nc-blue);
   margin-bottom: 10px;
+  font-weight: 450;
 }
 
 .app-primary-btn:hover {
   color: white;
-  background-color: var(--dark-grey);
-  border-color: var(--dark-grey);
+  background-color: var(--bright-pink);
+  border-color: var(--nc-blue);
 }
 
 .app-primary-btn:focus {
   color: white;
-  background-color: var(--dark-grey);
-  border-color: var(--dark-grey);
+  background-color: var(--nc-blue);
+  border-color: var(--bright-pink);
   box-shadow: 0 0 0 0.2rem rgba(142,142,138, 0.5)
 }
 
 .app-primary-btn:active {
   color: white;
-  background-color: var(--dark-grey);
-  border-color: var(--dark-grey);
+  background-color: var(--nc-blue);
+  border-color: var(--bright-pink);
   box-shadow: 0 0 0 0.2rem rgba(142,142,138, 0.5);
 }
 
 .app-secondary-btn {
-  color: var(--pink);
-  border-color: var(--pink);
+  color: var(--nc-blue);
+  border-color: var(--nc-blue);
   margin-bottom: 10px;
+  font-weight: 450;
 }
 
 .app-secondary-btn:hover {
   color: white;
-  background-color:var(--pink);
-  border-color: var(--pink);
+  background-color:var(--bright-pink);
+  border-color: var(--nc-blue);
 }
 
 .app-secondary-btn:focus {
@@ -108,8 +116,8 @@ a:hover.app-link {
 
 .app-secondary-btn:active {
   color: white;
-  background-color: var(--pink);
-  border-color: var(--pink);
+  background-color: var(--nc-blue);
+  border-color: var(--nc-blue);
   box-shadow: 0 0 0 0.2rem rgba(233, 128, 116, 0.5);
 }
 
