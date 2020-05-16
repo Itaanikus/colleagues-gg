@@ -20,12 +20,12 @@ function App() {
           <div className="d-none d-lg-block col-lg-3"></div>
         </div>
       </div >
-      <footer class="page-footer font-small cyan darken-3">
+      {/* <footer class="page-footer font-small cyan darken-3">
         <div class="container">
           <div class="row">
           </div>
         </div>
-      </footer>
+      </footer> */}
     </React.Fragment>
   );
 }
