@@ -2,12 +2,16 @@
   background-color: var(--nc-header);
   padding: 20px;
   border-bottom: 3px solid var(--nc-red);
+  text-align: center;
 }
 
-.p-navbar {
-  width: 100%;
+.navbar-logo {
   display: inline-block;
   font-size: 25px;
-  text-align: center;
   color: white!important;
+  margin: auto;
+}
+
+.navbar-logo:hover {
+  text-decoration: none;
 }

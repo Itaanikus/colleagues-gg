@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
 import Nav from './Nav/Nav';
 
@@ -7,26 +8,14 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
   return (
-    <React.Fragment>
+    <Router basename="/colleagues-gg">
       <Nav />
       <div className="container-fluid">
-        <div className="row">
-          <div className="d-none d-lg-block col-lg-3"></div>
-          <div className="col col-lg-6">
-            <div className="app">
-              <Home />
-            </div>
-          </div>
-          <div className="d-none d-lg-block col-lg-3"></div>
-        </div>
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
       </div >
-      {/* <footer class="page-footer font-small cyan darken-3">
-        <div class="container">
-          <div class="row">
-          </div>
-        </div>
-      </footer> */}
-    </React.Fragment>
+    </Router>
   );
 }
 
