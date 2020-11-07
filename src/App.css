@@ -64,26 +64,31 @@ a:hover.app-link {
   border-color: var(--nc-blue);
 }
 
-.app-primary-btn:hover {
+.app-primary-btn:hover:not([disabled]) {
   color: white;
   background-color: var(--nc-blue);
   border-color: var(--nc-blue);
 }
 
-.app-primary-btn:focus {
+.app-primary-btn:focus:not([disabled]) {
   color: white;
   background-color: var(--nc-blue);
   border-color: var(--nc-blue);
   box-shadow: 0 0 0 0.2rem rgba(9,25,59, 0.5)
 }
 
-.app-primary-btn:active {
+.app-primary-btn:active:not([disabled]) {
   color: white;
   background-color: var(--nc-blue);
   border-color: var(--nc-blue);
   box-shadow: 0 0 0 0.2rem rgba(9,25,59, 0.5);
 }
 
+.app-primary-btn:disabled,
+.app-primary-btn[disabled]{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .app-secondary-btn {
   color: var(--nc-red);
   border-color: var(--nc-red);
